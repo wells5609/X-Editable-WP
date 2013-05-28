@@ -26,3 +26,9 @@ Everyone is welcome to help contribute and improve this project (please).
 ## Support
 
 None provided
+
+### Filters (known)
+* 'xe_data_value_{{meta_or_tax}}'
+'''
+$html .= 'data-value="' . apply_filters( 'xe_data_value_'.$this->meta_or_tax, $this->html_value, $this->input_type, $this->generic_name ) . '" ';
+'''

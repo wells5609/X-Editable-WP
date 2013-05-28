@@ -28,7 +28,24 @@ Everyone is welcome to help contribute and improve this project (please).
 None provided
 
 ### Filters (known)
-* 'xe_data_value_{{meta_or_tax}}'
-'''
+* xe_label_output
+```
+if ( $this->show_label ) {
+			$html .= apply_filters('xe_label_output', $this->html_label, $this->meta_or_tax, $this->input_type, $this->generic_name, $this->element_label );		
+		}
+```
+* xe_data_value_{{meta_or_tax}}
+```
 $html .= 'data-value="' . apply_filters( 'xe_data_value_'.$this->meta_or_tax, $this->html_value, $this->input_type, $this->generic_name ) . '" ';
-'''
+```
+* xe_edit_text
+```
+if ( true === $this->show_external ) {		
+			$edit_text = 'Edit';
+			$html .= apply_filters( 'xe_edit_text', $edit_text, $this->meta_or_tax, $this->input_type, $this->generic_name, $this->element_label );
+		}
+```
+* xe_render_element
+```
+echo apply_filters('xe_render_element', $html, $this->meta_or_tax, $this->input_type, $this->generic_name, $this->element_label );
+```
